@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 4dc8537af89e69f488c88b316c2f5744
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 541053687190401083
+    second: Cachalot|Attack
+  - first:
+      74: -3031138784344920742
+    second: Cachalot|Attack_2
+  - first:
+      74: 2324888217595401848
+    second: Cachalot|Death
+  - first:
+      74: 7242363844831939658
+    second: Cachalot|Eat
+  - first:
+      74: -3552991800392649598
+    second: Cachalot|Hit_B
+  - first:
+      74: -267075911913823007
+    second: Cachalot|Hit_F
+  - first:
+      74: -142447651129734473
+    second: Cachalot|Hit_M
+  - first:
+      74: -6289210029773548072
+    second: Cachalot|Idle_1
+  - first:
+      74: -6558135137622510585
+    second: Cachalot|Idle_2
+  - first:
+      74: 6716862082715740332
+    second: Cachalot|Swim_F_Attack_IP
+  - first:
+      74: -3916591619585804665
+    second: Cachalot|Swim_F_Attack_RM
+  - first:
+      74: -8070720682344258869
+    second: Cachalot|Swim_F_IP
+  - first:
+      74: -5806078240633450219
+    second: Cachalot|Swim_F_RM
+  - first:
+      74: -4235935517088136619
+    second: Cachalot|Swim_FD_IP
+  - first:
+      74: -9176558380418764262
+    second: Cachalot|Swim_FD_RM
+  - first:
+      74: 4389547251338390821
+    second: Cachalot|Swim_FL_IP
+  - first:
+      74: 6933102436981760487
+    second: Cachalot|Swim_FL_RM
+  - first:
+      74: 6783317820002827225
+    second: Cachalot|Swim_FR_IP
+  - first:
+      74: -7252592159704832983
+    second: Cachalot|Swim_FR_RM
+  - first:
+      74: 2863761290410684760
+    second: Cachalot|Swim_FU_IP
+  - first:
+      74: 8614012365780328254
+    second: Cachalot|Swim_FU_RM
+  - first:
+      74: 3835623878169252513
+    second: Cachalot|Swim_S_F_IP
+  - first:
+      74: 5600924811969798082
+    second: Cachalot|Swim_S_F_RM
+  - first:
+      74: 9004948665460543419
+    second: Cachalot|Swim_S_FD_IP
+  - first:
+      74: -5217816900091766080
+    second: Cachalot|Swim_S_FD_RM
+  - first:
+      74: 8243857285976108911
+    second: Cachalot|Swim_S_FL_IP
+  - first:
+      74: -6140433573691951264
+    second: Cachalot|Swim_S_FL_RM
+  - first:
+      74: -2844824319189463342
+    second: Cachalot|Swim_S_FR_IP
+  - first:
+      74: 3693302343605984253
+    second: Cachalot|Swim_S_FR_RM
+  - first:
+      74: 8753039881084424266
+    second: Cachalot|Swim_S_FU_IP
+  - first:
+      74: -5296348984736800624
+    second: Cachalot|Swim_S_FU_RM
+  - first:
+      74: -249383456252676050
+    second: Cachalot|Turn_L_IP
+  - first:
+      74: 7774882355028389367
+    second: Cachalot|Turn_L_RM
+  - first:
+      74: -6919173163811959190
+    second: Cachalot|Turn_R_IP
+  - first:
+      74: -1696371307297539716
+    second: Cachalot|Turn_R_RM
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cachalot_M
+    second: {fileID: 2100000, guid: 0d9570b02f6a2ac4ea3039e8981d121f, type: 2}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Root
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
