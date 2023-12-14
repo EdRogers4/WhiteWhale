@@ -3,12 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - No Longer Hunkey Dorey
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Whale
   - Water
   - UI
   - 

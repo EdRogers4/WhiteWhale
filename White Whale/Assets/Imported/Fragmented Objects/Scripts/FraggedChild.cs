@@ -16,7 +16,7 @@ public class FraggedChild : MonoBehaviour
 	Vector3 sScale;
 	//// CONTROLLER
 
-	FraggedController fragControl;
+	public FraggedController fragControl;
 	[HideInInspector]
 	public float hitPoints = 1.0f;
 	public bool stickyFrag;
@@ -76,26 +76,35 @@ public class FraggedChild : MonoBehaviour
 		}
 	}
 	//frags fracture fragments on Collisions
-	public void OnCollisionEnter(Collision collision) {
-		if ((fragControl.collideMask.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer) {
-			if (this.fragControl.collidefragMagnitude > 0 && collision.relativeVelocity.magnitude > this.fragControl.collidefragMagnitude) {
-				fragMe(collision.relativeVelocity.magnitude * .2f * fragControl.hitPointDecrease);
+	public void OnCollisionEnter(Collision collision) 
+	{
+		if (collision.transform.tag != "No Longer Hunkey Dorey")
+		{
+			if ((fragControl.collideMask.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
+			{
+				if (this.fragControl.collidefragMagnitude > 0 && collision.relativeVelocity.magnitude > this.fragControl.collidefragMagnitude)
+				{
+					fragMe(collision.relativeVelocity.magnitude * .2f * fragControl.hitPointDecrease);
+				}
+				if (this.fragged && collision.relativeVelocity.magnitude > 1)
+				{
+					fragControl.dustParticles.transform.position = this.transform.position;
+					fragControl.dustParticles.Emit(1);
+					fragControl.fragParticles.transform.position = this.transform.position;
+					fragControl.fragParticles.Emit((int)UnityEngine.Random.Range(fragControl.fragEmitMinMax.x * .5f, fragControl.fragEmitMinMax.y * .5f));
+				}
 			}
-			if (this.fragged && collision.relativeVelocity.magnitude > 1) {
-				fragControl.dustParticles.transform.position = this.transform.position;
-				fragControl.dustParticles.Emit(1);
-				fragControl.fragParticles.transform.position = this.transform.position;
-				fragControl.fragParticles.Emit((int)UnityEngine.Random.Range(fragControl.fragEmitMinMax.x * .5f, fragControl.fragEmitMinMax.y * .5f));
+			if (fragControl.disableDelay > 0 && (fragControl.disableMask.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
+			{
+				Invoke("Disable", fragControl.disableDelay);
 			}
-		}
-		if (fragControl.disableDelay > 0 && (fragControl.disableMask.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer) {
-			Invoke("Disable", fragControl.disableDelay);
-		}
 
-		if (fragControl.impactSound != null && released && !audioS.isPlaying && collision.relativeVelocity.magnitude > fragControl.minVelocity && transform.GetComponent<AudioSource>().enabled) {
-			audioS.pitch = UnityEngine.Random.Range(fragControl.minPitch, fragControl.maxPitch);
-			//	Debug.Log(Mathf.Clamp01(collision.relativeVelocity.magnitude * .1f * fragControl.volume));
-			audioS.PlayOneShot(fragControl.impactSound, Mathf.Clamp01(collision.relativeVelocity.magnitude * .1f * fragControl.volume));
+			if (fragControl.impactSound != null && released && !audioS.isPlaying && collision.relativeVelocity.magnitude > fragControl.minVelocity && transform.GetComponent<AudioSource>().enabled)
+			{
+				audioS.pitch = UnityEngine.Random.Range(fragControl.minPitch, fragControl.maxPitch);
+				//	Debug.Log(Mathf.Clamp01(collision.relativeVelocity.magnitude * .1f * fragControl.volume));
+				audioS.PlayOneShot(fragControl.impactSound, Mathf.Clamp01(collision.relativeVelocity.magnitude * .1f * fragControl.volume));
+			}
 		}
 	}
 
