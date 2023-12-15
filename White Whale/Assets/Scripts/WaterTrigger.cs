@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class WaterTrigger : MonoBehaviour
 {
-    void Update()
-    {
-
-    }
+    [SerializeField] private GameObject hurricaneWeatherVFX;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -16,6 +13,7 @@ public class WaterTrigger : MonoBehaviour
             //Physics.gravity = new Vector3(0, 0f, 0);
             other.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
             other.GetComponent<Rigidbody>().useGravity = false;
+            hurricaneWeatherVFX.SetActive(false);
         }
     }
 
@@ -25,6 +23,7 @@ public class WaterTrigger : MonoBehaviour
         {
             //Physics.gravity = new Vector3(0, -1.0f, 0);
             other.GetComponent<Rigidbody>().useGravity = true;
+            hurricaneWeatherVFX.SetActive(true);
         }
     }
 }
