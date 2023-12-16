@@ -5,15 +5,21 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceMusic;
     [SerializeField] private TraumaInducer scriptTraumaInducer;
     [SerializeField] private bool isCameraShake;
     [SerializeField] private AudioClip[] soundDestruction;
+    [SerializeField] private AudioClip[] soundConcrete;
+    [SerializeField] private AudioClip[] soundDebris;
+    [SerializeField] private AudioClip theSong;
+
     private int floorDamage;
 
     private void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
         scriptTraumaInducer = gameObject.GetComponent<TraumaInducer>();
+        audioSourceMusic.PlayOneShot(theSong, 20.0f);
     }
 
     public IEnumerator CameraShake()
@@ -72,7 +78,9 @@ public class EventManager : MonoBehaviour
     public void PlaySoundDestruction(int index)
     {
         //Debug.Log("floor damage: " + floorDamage);
-        audioSource.PlayOneShot(soundDestruction[index], 2.0f);
+        audioSource.PlayOneShot(soundDestruction[index], 3.0f);
+        audioSource.PlayOneShot(soundConcrete[index], 6.0f);
+        audioSource.PlayOneShot(soundDebris[index], 6.0f);
         floorDamage = 0;
 
     }

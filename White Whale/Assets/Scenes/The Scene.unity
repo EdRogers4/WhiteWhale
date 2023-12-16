@@ -39524,8 +39524,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d951d013bde1eae4cb59d55e01baab7c, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 440dede0898b8e74bae790fe1f594815, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -39699,7 +39699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ee1c62c905bb24ea7c9cf3d9d40b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TraumaExponent: 1
+  TraumaExponent: 2
   MaximumAngularShake: {x: 15, y: 15, z: 15}
   MaximumTranslationShake: {x: 2, y: 2, z: 2}
 --- !u!1001 &1565740416
@@ -41235,6 +41235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3398fe93d3b6eaf438672cae5431c179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourceMusic: {fileID: 1562316905}
   scriptTraumaInducer: {fileID: 1599059172}
   isCameraShake: 0
   soundDestruction:
@@ -41246,6 +41247,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 228a976daf120cf4799c09a164da4589, type: 3}
   - {fileID: 8300000, guid: 7ff39cc74e0b7d649bd7bc2c0bb1ba42, type: 3}
   - {fileID: 8300000, guid: 739073dd47cfbdc47bd42d22cff93adb, type: 3}
+  soundConcrete:
+  - {fileID: 8300000, guid: 07dfe384444aa144e82a49755e4f256d, type: 3}
+  - {fileID: 8300000, guid: b3b38c4e872d55a4b91a49fd8f8fece9, type: 3}
+  - {fileID: 8300000, guid: 96e5d0d4a0207984d916f6dc9d76c60e, type: 3}
+  - {fileID: 8300000, guid: 7572f5b2356c99d41a542173e8100a86, type: 3}
+  - {fileID: 8300000, guid: 6baa54f43b320b7419875085efe015c4, type: 3}
+  - {fileID: 8300000, guid: c282a716656335744a868265b17ae90c, type: 3}
+  - {fileID: 8300000, guid: 5488b038bea604e47a4f26f977ff4f44, type: 3}
+  - {fileID: 8300000, guid: 097c377ae85ec3c40935759a18b9662e, type: 3}
+  soundDebris:
+  - {fileID: 8300000, guid: da8223d9bfab085449fb53b189f9f2b3, type: 3}
+  - {fileID: 8300000, guid: a378dfb71a09caf45b6c3712662e92cf, type: 3}
+  - {fileID: 8300000, guid: 4361e8ea851f23b48b93e26518e71b53, type: 3}
+  - {fileID: 8300000, guid: 9bf34d0bd2b385845a3a6e29f3f17da0, type: 3}
+  - {fileID: 8300000, guid: 9df48157925931443891031e8c2547dd, type: 3}
+  - {fileID: 8300000, guid: 48452db99e1bc234ab8549d1afcba66b, type: 3}
+  - {fileID: 8300000, guid: df9b83208c1b2b447b80d984e6e78aec, type: 3}
+  - {fileID: 8300000, guid: 04ccbfd476dbbd24780e93eaa7b2ab51, type: 3}
+  theSong: {fileID: 8300000, guid: 440dede0898b8e74bae790fe1f594815, type: 3}
 --- !u!82 &1599059175
 AudioSource:
   m_ObjectHideFlags: 0
