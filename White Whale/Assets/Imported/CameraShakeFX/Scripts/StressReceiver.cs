@@ -16,7 +16,7 @@ public class StressReceiver : MonoBehaviour
     {
         float shake = Mathf.Pow(_trauma, TraumaExponent);
         /* Only apply this when there is active trauma */
-        if(shake > 0)
+        if(_trauma > 0)
         {
             var previousRotation = _lastRotation;
             var previousPosition = _lastPosition;
@@ -35,7 +35,7 @@ public class StressReceiver : MonoBehaviour
 
             transform.localPosition += _lastPosition - previousPosition;
             transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles + _lastRotation - previousRotation);
-            _trauma = Mathf.Clamp01(_trauma - Time.deltaTime);
+            _trauma = _trauma - Time.deltaTime;
         }
         else
         {

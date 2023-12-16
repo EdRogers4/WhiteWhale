@@ -7,29 +7,37 @@ public class TraumaInducer : MonoBehaviour
     [Tooltip("Seconds to wait before trigerring the explosion particles and the trauma effect")]
     public float Delay = 1;
     [Tooltip("Maximum stress the effect can inflict upon objects Range([0,1])")]
-    public float MaximumStress = 0.6f;
+    public float MaximumStress;
     [Tooltip("Maximum distance in which objects are affected by this TraumaInducer")]
     public float Range = 45;
+    [SerializeField] private bool isTestShake;
 
-    private IEnumerator Start()
+
+    public void CameraShake(float intensity)
     {
-        /* Wait for the specified delay */
-        yield return new WaitForSeconds(Delay);
-        /* Play all the particle system this object has */
         PlayParticles();
-
+        MaximumStress = intensity;
         /* Find all gameobjects in the scene and loop through them until we find all the nearvy stress receivers */
         var targets = UnityEngine.Object.FindObjectsOfType<GameObject>();
-        for(int i = 0; i < targets.Length; ++i)
+        for (int i = 0; i < targets.Length; ++i)
         {
             var receiver = targets[i].GetComponent<StressReceiver>();
-            if(receiver == null) continue;
+            if (receiver == null) continue;
             float distance = Vector3.Distance(transform.position, targets[i].transform.position);
             /* Apply stress to the object, adjusted for the distance */
-            if(distance > Range) continue;
+            if (distance > Range) continue;
             float distance01 = Mathf.Clamp01(distance / Range);
             float stress = (1 - Mathf.Pow(distance01, 2)) * MaximumStress;
             receiver.InduceStress(stress);
+        }
+    }
+
+    private void Update()
+    {
+        if (isTestShake)
+        {
+            isTestShake = false;
+            CameraShake(MaximumStress);
         }
     }
 

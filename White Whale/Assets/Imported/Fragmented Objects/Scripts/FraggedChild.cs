@@ -30,11 +30,20 @@ public class FraggedChild : MonoBehaviour
 	[HideInInspector]
 	public Rigidbody cacheRB;
 
+	[SerializeField] private bool isDamaged;
+
 	//// USE THIS FUNCTION TO DAMAGE THE FRAGMENTS SO THEY FALL OFF //// gameObject.SendMessage("Damage", 1f, SendMessageOptions.DontRequireReceiver);
 	public void Damage(float damage) {
 		fragMe(fragControl.hitPointDecrease * damage);
 		if (fragControl.fragAllOnDamage) {
 			fragControl.FragAll();
+		}
+
+		if (!isDamaged)
+		{
+			isDamaged = true;
+			fragControl.CountFloorDamage();
+			fragControl.ShakeCamera();
 		}
 	}
 
