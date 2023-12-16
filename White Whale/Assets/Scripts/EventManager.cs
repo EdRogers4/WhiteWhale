@@ -8,10 +8,19 @@ public class EventManager : MonoBehaviour
     [SerializeField] private AudioSource audioSourceMusic;
     [SerializeField] private TraumaInducer scriptTraumaInducer;
     [SerializeField] private bool isCameraShake;
+    [SerializeField] private Transform transformCamera;
+    [SerializeField] private Animator animatorMeat;
     [SerializeField] private AudioClip[] soundDestruction;
     [SerializeField] private AudioClip[] soundConcrete;
     [SerializeField] private AudioClip[] soundDebris;
     [SerializeField] private AudioClip theSong;
+    [SerializeField] private ParticleSystem[] particleBlood;
+    [SerializeField] private GameObject volumeDeathUnderwater;
+    private float speedMoveVolume = 50f;
+    private float distanceVolumeDeathSurface;
+    private float distanceVolumeDeathUnderwater;
+
+    private bool isTheHunkeyDoreyADeadDeadDead;
 
     private int floorDamage;
 
@@ -20,6 +29,17 @@ public class EventManager : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         scriptTraumaInducer = gameObject.GetComponent<TraumaInducer>();
         audioSourceMusic.PlayOneShot(theSong, 20.0f);
+        distanceVolumeDeathUnderwater = Vector3.Distance(volumeDeathUnderwater.transform.position, transformCamera.position);
+    }
+
+    private void Update()
+    {
+        if (isTheHunkeyDoreyADeadDeadDead && distanceVolumeDeathUnderwater > 0.01f)
+        {
+            var step = speedMoveVolume * Time.deltaTime;
+            volumeDeathUnderwater.transform.position = Vector3.MoveTowards(volumeDeathUnderwater.transform.position, transformCamera.position, step);
+            distanceVolumeDeathUnderwater = Vector3.Distance(volumeDeathUnderwater.transform.position, transformCamera.position);
+        }
     }
 
     public IEnumerator CameraShake()
@@ -83,6 +103,17 @@ public class EventManager : MonoBehaviour
         audioSource.PlayOneShot(soundDebris[index], 6.0f);
         floorDamage = 0;
 
+    }
+
+    public void BloodCloud()
+    {
+        isTheHunkeyDoreyADeadDeadDead = true;
+        animatorMeat.SetBool("isBumpBump", true);
+
+        for (int i = 0; i < particleBlood.Length; i++)
+        {
+            particleBlood[i].Play();
+        }
     }
 
     public void CountFloorDamage()
