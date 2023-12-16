@@ -14,6 +14,7 @@ public class EventManager : MonoBehaviour
     [SerializeField] private AudioClip[] soundConcrete;
     [SerializeField] private AudioClip[] soundDebris;
     [SerializeField] private AudioClip theSong;
+    [SerializeField] private AudioClip soundHeartbeat;
     [SerializeField] private ParticleSystem[] particleBlood;
     [SerializeField] private GameObject volumeDeathUnderwater;
     private float speedMoveVolume = 50f;
@@ -114,6 +115,11 @@ public class EventManager : MonoBehaviour
         {
             particleBlood[i].Play();
         }
+    }
+
+    public void PlayHeartBeat()
+    {
+        audioSource.PlayOneShot(soundHeartbeat, 25.0f);
     }
 
     public void CountFloorDamage()

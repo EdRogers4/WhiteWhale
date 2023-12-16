@@ -39542,6 +39542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1460319434}
   - component: {fileID: 1460319433}
+  - component: {fileID: 1460319435}
   m_Layer: 0
   m_Name: Meat In Your Face
   m_TagString: Untagged
@@ -39590,6 +39591,19 @@ Transform:
   - {fileID: 198381019}
   m_Father: {fileID: 1562316904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1460319435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460319432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ab95b95b4398345a82c16296b1a292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptEventManager: {fileID: 1599059174}
 --- !u!1001 &1460847310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44434,6 +44448,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: df9b83208c1b2b447b80d984e6e78aec, type: 3}
   - {fileID: 8300000, guid: 04ccbfd476dbbd24780e93eaa7b2ab51, type: 3}
   theSong: {fileID: 8300000, guid: 440dede0898b8e74bae790fe1f594815, type: 3}
+  soundHeartbeat: {fileID: 8300000, guid: c85019f02b6d60b4c853921aeeac0e5b, type: 3}
   particleBlood:
   - {fileID: 153328420}
   - {fileID: 1208204732}
