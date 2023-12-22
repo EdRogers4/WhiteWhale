@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WhaleCollider : MonoBehaviour
 {
-    [SerializeField] private EventManager scriptEventManager;
+    [SerializeField] private DeathView scriptDeathView;
+    [SerializeField] private BoneCloud scriptBoneCloud;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -14,7 +15,8 @@ public class WhaleCollider : MonoBehaviour
         }
         else if (collision.transform.tag == "No Longer Hunkey Dorey")
         {
-            scriptEventManager.BloodCloud();
+            scriptBoneCloud.TurnTheHunkeyDoreyNoLongerIntoABoneCloud();
+            scriptDeathView.isTheHunkeyDoreyADeadDeadDead = true;
         }
     }
 }

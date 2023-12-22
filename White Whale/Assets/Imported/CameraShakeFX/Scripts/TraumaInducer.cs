@@ -15,7 +15,7 @@ public class TraumaInducer : MonoBehaviour
 
     public void CameraShake(float intensity)
     {
-        PlayParticles();
+        //PlayParticles();
         MaximumStress = intensity;
         /* Find all gameobjects in the scene and loop through them until we find all the nearvy stress receivers */
         var targets = UnityEngine.Object.FindObjectsOfType<GameObject>();

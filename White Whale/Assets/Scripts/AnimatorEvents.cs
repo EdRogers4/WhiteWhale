@@ -5,10 +5,10 @@ using UnityEngine;
 public class AnimatorEvents : MonoBehaviour
 {
     private Animator animator;
-    [SerializeField] private EventManager scriptEventManager;
+    [SerializeField] private TheSoundClipStation scriptSoundClip;
 
     public void PlayHeartBeat()
     {
-        scriptEventManager.PlayHeartBeat();
+        scriptSoundClip.PlayHeartBeat();
     }
 }

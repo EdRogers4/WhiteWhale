@@ -5,7 +5,7 @@ using System.Linq;
 public class FraggedController : MonoBehaviour
 {
 	[Header("Scripts")]
-	public EventManager scriptEventManager;
+	public HeadBoom scriptHeadBoom;
 
 	[Header("Fragments")]
 	[Tooltip("Can frags fall off, set to false for floors and walls where the frags only are suppose to rotate")]
@@ -122,17 +122,17 @@ public class FraggedController : MonoBehaviour
 		if (startMesh == null) CombineFrags();
 		InvokeRepeating("reCombine", 1.0f, 1.0f);
 		ChangeMaterials();
-		scriptEventManager = GameObject.Find("Event Manager").GetComponent<EventManager>();
+		scriptHeadBoom = GameObject.Find("Head").GetComponent<HeadBoom>();
 	}
 
 	public void ShakeCamera()
     {
-		StartCoroutine(scriptEventManager.CameraShake());
+		StartCoroutine(scriptHeadBoom.CameraShake());
     }
 
 	public void CountFloorDamage()
     {
-		scriptEventManager.CountFloorDamage();
+		scriptHeadBoom.CountFloorDamage();
     }
 
 	public void ChangeMaterials() {
